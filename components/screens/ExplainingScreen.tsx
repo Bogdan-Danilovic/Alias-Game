@@ -16,7 +16,7 @@ const TEAM_COLORS = {
 };
 
 export function ExplainingScreen({ room, playerId }: Props) {
-  const [timeLeft, setTimeLeft] = useState(room.settings.roundDuration);
+  const [timeLeft, setTimeLeft] = useState<number>(room.settings.roundDuration);
   const [wordKey, setWordKey] = useState(0);
   const [flash, setFlash] = useState<'correct' | 'wrong' | null>(null);
 
@@ -142,9 +142,9 @@ export function ExplainingScreen({ room, playerId }: Props) {
         ) : (
           <div className="text-center min-h-[80px] flex flex-col items-center justify-center gap-2">
             <p className="text-[14px] text-slate-400">
-              {explainer?.name} objašnjava...
+              {explainer?.name} obja&#353;njava...
             </p>
-            <p className="text-[11px] text-slate-600">Pogađaj riječ!</p>
+            <p className="text-[11px] text-slate-600">Poga&#273;aj rije&#269;!</p>
           </div>
         )}
 
@@ -153,7 +153,7 @@ export function ExplainingScreen({ room, playerId }: Props) {
           Ova runda: <span className={`font-bold ${roundScore >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>{roundScore >= 0 ? '+' : ''}{roundScore}</span>
         </p>
 
-        {/* Action buttons — only for explainer */}
+        {/* Action buttons */}
         {isExplainer && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -165,19 +165,19 @@ export function ExplainingScreen({ room, playerId }: Props) {
               onClick={handleWrong}
               className="flex-1 py-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-[18px] font-bold hover:bg-red-500/20 active:scale-95 transition-all"
             >
-              ✗
+              &#10007;
             </button>
             <button
               onClick={handleSkip}
               className="flex-1 py-4 rounded-xl bg-white/[0.03] border border-white/[0.06] text-slate-500 text-[14px] font-medium hover:bg-white/[0.06] active:scale-95 transition-all"
             >
-              Preskoči
+              Presko&#269;i
             </button>
             <button
               onClick={handleCorrect}
               className="flex-1 py-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[18px] font-bold hover:bg-emerald-500/20 active:scale-95 transition-all"
             >
-              ✓
+              &#10003;
             </button>
           </motion.div>
         )}
