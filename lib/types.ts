@@ -28,7 +28,6 @@ export interface WordResult {
 export interface AliasRoom {
   code: string;
   status: AliasStatus;
-  gameType: 'alias';
   hostId: string;
   players: AliasPlayer[];
   settings: AliasSettings;
