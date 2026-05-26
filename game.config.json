@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Bogdan-Danilovic/Game-Hub/main/game.config.schema.json",
+  "id": "alias",
+  "name": "Alias",
+  "version": "1.0.0",
+  "description": "Objasni što više riječi za 60 sekundi. Tvoj tim mora da pogodi.",
+  "shortDescription": "Reci drugim riječima",
+  "icon": "💬",
+  "accentColor": "#0891b2",
+  "minPlayers": 4,
+  "maxPlayers": 16,
+  "avgDuration": "15-30 min",
+  "tags": ["riječi", "tim", "brzina"],
+
+  "gameType": {
+    "id": "alias",
+    "statuses": ["lobby", "roundStart", "explaining", "roundEnd", "scoreboard", "finished"]
+  },
+
+  "files": {
+    "types": "lib/types.ts",
+    "firestore": "lib/firestore.ts",
+    "utils": "lib/utils.ts",
+    "prompts": "lib/prompts/",
+    "components": "components/screens/",
+    "pages": {
+      "home": "app/page.tsx",
+      "room": "app/room/[code]/page.tsx"
+    }
+  },
+
+  "sharedDependencies": {
+    "hooks": ["hooks/usePlayer.ts"],
+    "lib": ["lib/firebase.ts", "lib/utils.ts"]
+  },
+
+  "npmDependencies": {}
+}
