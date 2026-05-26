@@ -12,7 +12,7 @@ import {
 import { db } from './firebase';
 import { AliasRoom, AliasPlayer, AliasSettings } from './types';
 import { generateRoomCode, generatePlayerId, shuffleArray } from './utils';
-import { getRandomWords } from './prompts/index';
+import { getRandomWords } from './prompts/alias';
 
 function roomRef(code: string) {
   return doc(db, 'rooms', code);

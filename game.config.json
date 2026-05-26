@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/Bogdan-Danilovic/Game-Hub/main/game.config.schema.json",
   "id": "alias",
   "name": "Alias",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Objasni što više riječi za 60 sekundi. Tvoj tim mora da pogodi.",
   "shortDescription": "Reci drugim riječima",
   "icon": "💬",
@@ -21,7 +21,7 @@
     "types": "lib/types.ts",
     "firestore": "lib/firestore.ts",
     "utils": "lib/utils.ts",
-    "prompts": "lib/prompts/",
+    "prompts": "lib/prompts/alias.ts",
     "components": "components/screens/",
     "pages": {
       "home": "app/page.tsx",
